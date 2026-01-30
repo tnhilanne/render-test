@@ -1,8 +1,6 @@
 const express = require('express')
 const app = express()
-const cors = require('cors')
 
-app.use(cors()) // Enable CORS (cross origin resource sharing) for all routes
 app.use(express.static('dist')) // Serve static files from the 'dist' directory
 
 let notes = [
