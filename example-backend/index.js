@@ -8,24 +8,24 @@ const app = express()
 app.use(express.static('dist')) // Serve static files from the 'dist' directory. Before other middleware
 app.use(express.json())
 
-let notes = [
-  {
-    id: "1",
-    content: "HTML is easy",
-    important: true
-  },
-  {
-    id: "2",
-    content: "Browser can execute only JavaScript",
-    important: false
-  },
-  {
-    id: "3",
-    content: "GET and POST are the most important methods of HTTP protocol",
-    important: true
-  }
-]
- 
+// let notes = [
+//   {
+//     id: '1',
+//     content: 'HTML is easy',
+//     important: true
+//   },
+//   {
+//     id: '2',
+//     content: 'Browser can execute only JavaScript',
+//     important: false
+//   },
+//   {
+//     id: '3',
+//     content: 'GET and POST are the most important methods of HTTP protocol',
+//     important: true
+//   }
+// ]
+
 const requestLogger = (request, response, next) => {
   console.log('Method:', request.method)
   console.log('Path:  ', request.path)
@@ -69,18 +69,18 @@ app.get('/api/notes/:id', (request, response, next) => {
 
 app.delete('/api/notes/:id', (request, response, next) => {
   Note.findByIdAndDelete(request.params.id)
-    .then(result => {
+    .then(() => {
       response.status(204).end()
     })
     .catch(error => next(error))
 })
 
-const generateId = () => {
-  const maxId = notes.length > 0
-    ? Math.max(...notes.map(n => Number(n.id)))
-    : 0
-  return String(maxId + 1)
-}
+// const generateId = () => {
+//   const maxId = notes.length > 0
+//     ? Math.max(...notes.map(n => Number(n.id)))
+//     : 0
+//   return String(maxId + 1)
+// }
 
 // Create a new note
 app.post('/api/notes', (request, response, next) => {
