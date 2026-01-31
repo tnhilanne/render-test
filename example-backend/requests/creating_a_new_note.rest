@@ -2,6 +2,7 @@ POST http://localhost:3001/api/notes/
 Content-Type: application/json
 
 {
-  "content": "This is a new note created via REST client",
-  "important": true
+  "content": "Usertest This is a new note created via REST client",
+  "important": true,
+  "userId": "697e3e4498c8b471f5f390de"
 }
