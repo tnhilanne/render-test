@@ -1,8 +1,8 @@
 POST http://localhost:3001/api/notes/
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY5N2UzZTQ0OThjOGI0NzFmNWYzOTBkZSIsImlhdCI6MTc2OTg5MDYyOSwiZXhwIjoxNzY5ODk0MjI5fQ.DjjunfHvByxmJUu1vfluaHRXtNwjdecONqHdts0vE7M
 
 {
-  "content": "Usertest This is a new note created via REST client",
-  "important": true,
-  "userId": "697e3e4498c8b471f5f390de"
+  "content": "Authed user test. This is a new note created via REST client",
+  "important": true
 }
